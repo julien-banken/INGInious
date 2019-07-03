@@ -77,6 +77,7 @@ var docCookies = {
 (function () {
     window.addEventListener("load", function () {
 
+        var key = "theme"
         var selector = document.getElementById("theme-selector");
         var themes = selector.getElementsByClassName("dropdown-item");
 
@@ -84,7 +85,8 @@ var docCookies = {
             themes[k].addEventListener("click", function (e) {
                 var theme = e.target.innerHTML;
                 document.body.className = theme;
-                docCookies.setItem("theme", theme, Infinity)
+                docCookies.removeItem(key)
+                docCookies.setItem("theme", theme, Infinity, "/");
             })
         }
     })
