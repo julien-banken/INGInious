@@ -11,6 +11,9 @@ body.light {
   --accent-color: #f7f7f7;
   --text-color: #181818;
   --border-color: #ccc;
+  --code-current-line-background: #f0fcff;
+  --code-default-color: #181818;
+  --code-background-default-color: #FFFFFF
 }
 
 /* Dark theme */
@@ -20,7 +23,10 @@ body.dark {
   --secondary-color: #333;
   --accent-color: #333;
   --text-color: #bebebe;
-  --border-color: #888888;
+  --border-color: #888888;181818
+  --code-current-line-background-color: rgb(66, 59, 59);
+  --code-default-color: #FFFFFF;
+  --code-background-default-color: #333333;
 }
 
 /* Progress bars */
@@ -113,8 +119,8 @@ form#task label {
   font-family: 'Source Code Pro', monospace !important;
   letter-spacing: 0.3px;
   word-spacing: 1px;
-  background: #fdfdfd;
-  color: #181818;
+  background: var(--code-background-default-color);
+  color: var(--code-default-color);
 }
 .cm-s-default.CodeMirror pre {
   font-family: 'Source Code Pro', monospace !important;
@@ -126,7 +132,7 @@ form#task label {
   border: none;
 }
 .cm-s-default .CodeMirror-activeline-background {
-  background: #f0fcff;
+  background: var(--code-current-line-background);
 }
 .cm-s-default .cm-tab {
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
