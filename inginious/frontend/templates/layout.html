@@ -68,6 +68,7 @@ $#
         <script src="$get_homepath(True)/static/js/webapp.js" type="text/javascript" charset="utf-8"></script>
         <script src="$get_homepath(True)/static/js/studio.js" type="text/javascript" charset="utf-8"></script>
         <script src="$get_homepath(True)/static/js/aggregations.js" type="text/javascript" charset="utf-8"></script>
+        <script src="$get_homepath(True)/static/js/theme.js" type="text/javascript" charset="utf-8"></script>
 
     <script type="text/javascript">
         CodeMirror.modeURL = "$get_homepath(True)/static/js/codemirror/mode/%N/%N.js";
@@ -81,7 +82,7 @@ $#
     $:template_helper.call('header_hook')
 </head>
 
-<body>
+<body class="dark">
 
     <div class="navbar navbar-expand-sm bg-dark navbar-dark bg-dark">
         <div class="container-fluid">
@@ -151,6 +152,17 @@ $#
 
     <div id="footer" class="navbar navbar-expand-sm bg-dark navbar-dark bg-dark">
         <div class="container-fluid">
+
+            <div id="theme-selector" class="btn-group dropup">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Theme
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">light</a>
+                    <a class="dropdown-item" href="#">dark</a>
+                </div>
+            </div>
+
             <p class="navbar-text">
                 &copy; 2014-2019 Universit&eacute; catholique de Louvain
             </p>

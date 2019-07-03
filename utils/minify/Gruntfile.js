@@ -25,7 +25,8 @@ module.exports = function(grunt)
                         '../../inginious/frontend/static/js/webapp.js',
                         '../../inginious/frontend/static/js/studio.js',
                         '../../inginious/frontend/static/js/aggregations.js',
-                        '../../inginious/frontend/static/js/checked-list-group.js'
+                        '../../inginious/frontend/static/js/checked-list-group.js',
+                        '../../inginious/frontend/static/js/theme.js'
                     ]
                 }
             }

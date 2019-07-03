@@ -2,6 +2,27 @@
 /* Fonts */
 @import url(//fonts.googleapis.com/css?family=Yanone+Kaffeesatz:300);
 @import url(//fonts.googleapis.com/css?family=Source+Code+Pro);
+
+/* Light theme */
+
+body.light {
+  --main-color: #fff;
+  --secondary-color: #333;
+  --accent-color: #f7f7f7;
+  --text-color: #181818;
+  --border-color: #ccc;
+}
+
+/* Dark theme */
+
+body.dark {
+  --main-color: #252525;
+  --secondary-color: #333;
+  --accent-color: #333;
+  --text-color: #bebebe;
+  --border-color: #888888;
+}
+
 /* Progress bars */
 .progress-bar[aria-valuenow] {
   line-height: 18px !important;
@@ -17,7 +38,8 @@
 }
 /* Code elements */
 pre {
-  border: 1px solid #cccccc;
+  border: 1px solid var(--border-color);
+  background: var(--secondary-color);
   padding: 10px;
 }
 input.monospace {
@@ -139,6 +161,8 @@ html {
 }
 body {
   margin-bottom: 45px;
+  background: var(--main-color);
+  color: var(--text-color);
   /* Margin bottom by footer height */
 }
 #footer {
@@ -273,4 +297,45 @@ ul.checked-list-box input[type="checkbox"] {
 .dragin{
     background-color: lightblue;
     filter: blur(4px);
+}
+
+.list-group-item:not(.list-group-item-primary):not(.list-group-item-secondary):not(.list-group-item-success):not(.list-group-item-info):not(.list-group-item-warning):not(.list-group-item-danger):not(.list-group-item-light):not(.list-group-item-dark) {
+  background-color: var(--main-color);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+.table th,
+.table td {
+  border-color: var(--border-color);
+}
+
+.card {
+  border-color: var(--border-color);
+}
+.card-header {
+  border-color: var(--border-color);
+}
+.card-body {
+  background-color: var(--main-color);
+}
+.card-header,
+.card-footer {
+  background-color: var(--accent-color);
+}
+
+.form-control {
+  background-color: var(--main-color);
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+.form-control:focus {
+  background-color: var(--main-color);
+  color: var(--text-color);
+}
+.form-control:disabled {
+  background-color: var(--accent-color);
+}
+.form-control:disabled {
+  cursor: not-allowed;
 }
