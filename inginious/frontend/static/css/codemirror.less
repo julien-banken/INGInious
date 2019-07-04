@@ -217,7 +217,9 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 .CodeMirror-gutter-wrapper ::-moz-selection {
     background-color: transparent
 }
-  
+
+
+
 .CodeMirror-lines {
     cursor: text;
     min-height: 1px; /* prevents collapsing before first draw */
@@ -255,13 +257,13 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
     left: 0; right: 0; top: 0; bottom: 0;
     z-index: 0;
 }
-  
+
 .CodeMirror-linewidget {
     position: relative;
     z-index: 2;
     overflow: auto;
 }
-  
+
 .CodeMirror-rtl pre {
     direction: rtl;
 }
@@ -269,7 +271,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 .CodeMirror-code {
     outline: none;
 }
-  
+
 /* Force content-box sizing for the elements where we expect it */
 
 .CodeMirror-scroll,
@@ -280,7 +282,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
     -moz-box-sizing: content-box;
     box-sizing: content-box;
 }
-  
+
 .CodeMirror-measure {
     position: absolute;
     width: 100%;
@@ -288,7 +290,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
     overflow: hidden;
     visibility: hidden;
 }
-  
+
 .CodeMirror-cursor {
     position: absolute;
     pointer-events: none;
@@ -297,7 +299,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 .CodeMirror-measure pre {
     position: static;
 }
-  
+
 div.CodeMirror-cursors {
     visibility: hidden;
     position: relative;
@@ -307,11 +309,11 @@ div.CodeMirror-cursors {
 div.CodeMirror-dragcursors {
     visibility: visible;
 }
-  
+
 .CodeMirror-focused div.CodeMirror-cursors {
     visibility: visible;
 }
-  
+
 .CodeMirror-crosshair {
     cursor: crosshair;
 }
@@ -332,24 +334,24 @@ div.CodeMirror-dragcursors {
     background: #ffa;
     background: rgba(255, 255, 0, .4);
 }
-  
+
 /* Used to force a border model for a node */
 .cm-force-border {
     padding-right: .1px;
 }
-  
+
 @media print {
     /* Hide the cursor when printing */
     .CodeMirror div.CodeMirror-cursors {
         visibility: hidden;
     }
 }
-  
+
 /* See issue #2901 */
 .cm-tab-wrap-hack:after {
     content: '';
 }
-  
+
 /* Help users use markselection to safely style text background */
 span.CodeMirror-selectedtext {
     background: none;
@@ -369,7 +371,7 @@ each(@themes, {
         .CodeMirror-selected {
             background: @code-selection-color;
         }
-        
+
         .CodeMirror-focused .CodeMirror-selected {
             background: @code-selection-color;
         }
@@ -382,10 +384,13 @@ each(@themes, {
             background-color: @code-gutter-color;
             border-color: @code-gutter-border-color;
         }
+        .CodeMirror-line {
+          color: @code-line-color;
+        }
         .CodeMirror-linenumbers {
             color: @code-line-number-color;
         }
-        
+
         .CodeMirror-activeline-background {
             background: @cm-active-line-color;
         }
@@ -395,11 +400,11 @@ each(@themes, {
             color: @code-text-color;
             border-color: @border-color;
         }
-        
+
         .cm-s-default .cm-keyword {
             color: @cm-keyword-color;
         }
-        
+
         .cm-s-default .cm-atom {
             color: @cm-atom-color;
         }
@@ -426,7 +431,7 @@ each(@themes, {
         .cm-s-default .cm-variable-3 {
             color: @cm-variable-3-color;
         }
-        
+
         .cm-s-default .cm-comment {
             color: @cm-comment-color;
         }
@@ -446,27 +451,27 @@ each(@themes, {
         .cm-s-default .cm-qualifier {
             color: @cm-qualifier-color;
         }
-        
+
         .cm-s-default .cm-builtin {
             color: @cm-builtin-color;
         }
-        
+
         .cm-s-default .cm-bracket {
             color: @cm-bracket-color;
         }
-        
+
         .cm-s-default .cm-tag {
             color: @cm-tag-color;
         }
-        
+
         .cm-s-default .cm-attribute {
             color: @cm-attribute-color;
         }
-        
+
         .cm-s-default .cm-hr {
             color: @cm-hr-color;
         }
-        
+
         .cm-s-default .cm-link {
             color: @cm-link-color;
         }

@@ -339,7 +339,10 @@ body.light .CodeMirror-cursor {
 }
 body.light .CodeMirror-gutters {
   background-color: #f7f7f7;
-  border-color: #000;
+  border-color: transparent;
+}
+body.light .CodeMirror-line {
+  color: #222;
 }
 body.light .CodeMirror-linenumbers {
   color: #999;
@@ -414,23 +417,26 @@ body.dark .CodeMirror {
   color: #ffffff;
 }
 body.dark .CodeMirror-selected {
-  background: red;
+  background: #636060;
 }
 body.dark .CodeMirror-focused .CodeMirror-selected {
-  background: red;
+  background: #636060;
 }
 body.dark .CodeMirror-cursor {
   border-color: #FFF;
 }
 body.dark .CodeMirror-gutters {
   background-color: #333333;
-  border-color: #000;
+  border-color: transparent;
+}
+body.dark .CodeMirror-line {
+  color: #bebebe;
 }
 body.dark .CodeMirror-linenumbers {
   color: #000;
 }
 body.dark .CodeMirror-activeline-background {
-  background: #888888;
+  background: #403d3d;
 }
 body.dark .cm-s-default {
   background: #333333;
