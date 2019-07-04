@@ -3,6 +3,11 @@
 // more information about the licensing of this file.
 //
 
+@import (css) url(//fonts.googleapis.com/css?family=Yanone+Kaffeesatz:300);
+@import (css) url(//fonts.googleapis.com/css?family=Source+Code+Pro);
+
+@import "colors.less";
+
 /* Mixins */
 .blur(@size) {
     -webkit-filter: blur(@size);
@@ -36,10 +41,6 @@
     filter: @filter;
 }
 
-/* Fonts */
-@import (css) url(//fonts.googleapis.com/css?family=Yanone+Kaffeesatz:300);
-@import (css) url(//fonts.googleapis.com/css?family=Source+Code+Pro);
-
 /* Progress bars */
 .progress-bar[aria-valuenow] {
     line-height: 18px !important;
@@ -55,10 +56,10 @@
     box-shadow: none;
 }
 
-/* Code elements */
-pre {
-    border: 1px solid #cccccc;
-    padding: 10px;
+/* Form */
+
+.form-control:disabled {
+    cursor: not-allowed;
 }
 
 input.monospace {
@@ -131,35 +132,49 @@ form#task {
     cursor: pointer;
 }
 
-/* Codemirror */
-.cm-s-default {
-    @font-mul: 1;
-    font-size: @font-mul*1em;
-    line-height: @font-mul*1.5em;
-    font-family: 'Source Code Pro', monospace !important;
-    letter-spacing: 0.3px;
-    word-spacing: 1px;
-    background: #fdfdfd;
-    color: #181818;
+each(@themes, {
 
-    &.CodeMirror pre {
-        font-family: 'Source Code Pro', monospace !important;
-    }
+    .theme(@value);
 
-    .CodeMirror-gutters {
-        background-color: transparent;
-        padding-right: 10px;
-        z-index: 3;
-        border: none;
-    }
+    body.@{value} {
 
-    .CodeMirror-activeline-background {
-        background: #f0fcff;
-    }
+        .list-group-item:not(.list-group-item-primary):not(.list-group-item-secondary):not(.list-group-item-success):not(.list-group-item-info):not(.list-group-item-warning):not(.list-group-item-danger):not(.list-group-item-light):not(.list-group-item-dark) {
+            background-color: @main-color;
+            color: @text-color;
+            border-color: @border-color;
+        }
 
-    .cm-tab {
-         background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
-         background-position: right;
-         background-repeat: no-repeat;
+        .table {
+            th, td {
+                border-color: @border-color;
+            }
+        }
+
+        .card {
+            border-color: @border-color;
+        }
+        .card-header {
+            border-color: @border-color;
+        }
+        .card-body {
+            background-color: @main-color;
+        }
+        .card-header,
+        .card-footer {
+            background-color: @accent-color;
+        }
+
+        .form-control {
+            background-color: @main-color;
+            border-color: @border-color;
+            color: @text-color;
+        }
+        .form-control:focus {
+            background-color: @main-color;
+            color: @text-color;
+        }
+        .form-control:disabled {
+            background-color: @accent-color;
+        }
     }
-}
+});
