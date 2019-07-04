@@ -76,8 +76,14 @@ var docCookies = {
 
 (function () {
     window.addEventListener("load", function () {
+        
+        var key = "theme";
 
-        var key = "theme"
+        if (docCookies.hasItem(key)) {
+            var theme = docCookies.getItem(key);
+            document.body.className = (theme.length == 0) ? "light" : theme;
+        }
+
         var selector = document.getElementById("theme-selector");
         var themes = selector.getElementsByClassName("dropdown-item");
 
@@ -85,7 +91,7 @@ var docCookies = {
             themes[k].addEventListener("click", function (e) {
                 var theme = e.target.innerHTML;
                 document.body.className = theme;
-                docCookies.removeItem(key)
+                docCookies.removeItem(key);
                 docCookies.setItem("theme", theme, Infinity, "/");
             })
         }
