@@ -3,6 +3,7 @@
 body.dark {
   --code-background-color: #333333;
   --code-text-color: #FFFFFF;
+  --code-current-line-background: rgb(66, 59, 59);
 
   --cm-keyword-color: #c678dd;
   --cm-atom-color: #61afef;
@@ -12,7 +13,6 @@ body.dark {
   --cm-variable-3-color: #0ad10a;
   --cm-comment-color: #5c6370;
   --cm-string-color: #98c379;
-  --cm-string-2-color: #f50;
   --cm-meta-color: #b0abab;
   --cm-qualifier-color: #b0abab;
   --cm-builtin-color: #18b5b2;
@@ -26,6 +26,7 @@ body.dark {
 body.light {
   --code-background-color: #FFFFFF;
   --code-text-color: inherit;
+  --code-current-line-background: transparent;
 
   --cm-keyword-color: #708;
   --cm-atom-color: #219;
@@ -35,7 +36,6 @@ body.light {
   --cm-variable-3-color: #085;
   --cm-comment-color: #a50;
   --cm-string-color: #a11;
-  --cm-string-2-color: #f50;
   --cm-meta-color: #555;
   --cm-qualifier-color: #555;
   --cm-builtin-color: #30a;
@@ -171,7 +171,7 @@ body.light {
 .cm-s-default .cm-variable-3 {color: var(--cm-variable-3-color);}
 .cm-s-default .cm-comment {color: var(--cm-comment-color);}
 .cm-s-default .cm-string {color: var(--cm-string-color);}
-.cm-s-default .cm-string-2 {color: var(--cm-string-2-color);}
+.cm-s-default .cm-string-2 {color: #f50;}
 .cm-s-default .cm-meta {color: var(--cm-meta-color);}
 .cm-s-default .cm-qualifier {color: var(--cm-qualifier-color);}
 .cm-s-default .cm-builtin {color: var(--cm-builtin-color);}
@@ -191,7 +191,7 @@ body.light {
 div.CodeMirror span.CodeMirror-matchingbracket {color: #0f0;}
 div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
 .CodeMirror-matchingtag { background: rgba(255, 150, 0, .3); }
-.CodeMirror-activeline-background {background: red;}
+.CodeMirror-activeline-background {background: #e8f2ff;}
 
 /* STOP */
 
@@ -283,7 +283,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
   /* Reset some styles that the rest of the page might have set */
   -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0;
   border-width: 0;
-  background: transparent;
+  background: var(--code-current-line-background);
   font-family: inherit;
   font-size: inherit;
   margin: 0;

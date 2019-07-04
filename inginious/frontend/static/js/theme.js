@@ -76,18 +76,18 @@ var docCookies = {
 
 (function () {
     window.addEventListener("load", function () {
-
-        var key = "theme"
-        var selector = document.getElementById("theme-selector");
-        var themes = selector.getElementsByClassName("dropdown-item");
-
-        for (var k = 0; k < themes.length; k++) {
-            themes[k].addEventListener("click", function (e) {
-                var theme = e.target.innerHTML;
-                document.body.className = theme;
-                docCookies.removeItem(key)
-                docCookies.setItem("theme", theme, Infinity, "/");
-            })
-        }
+        var themeSwitcher = document.getElementById("theme-switcher");
+        themeSwitcher.addEventListener("click", function (e) {
+            var oldTheme = document.body.className;
+            docCookies.removeItem("theme");
+            if(oldTheme == "dark"){
+              document.body.className = "light";
+              docCookies.setItem("theme", "light", Infinity, "/");
+            }
+            else{
+              document.body.className = "dark";
+              docCookies.setItem("theme", "dark", Infinity, "/");
+            }
+        })
     })
 })();
