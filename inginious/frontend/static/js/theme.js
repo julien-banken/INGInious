@@ -81,12 +81,14 @@ var docCookies = {
             var oldTheme = document.body.className;
             docCookies.removeItem("theme");
             if(oldTheme == "dark"){
-              document.body.className = "light";
-              docCookies.setItem("theme", "light", Infinity, "/");
+              //document.body.className = "light";
+              //docCookies.setItem("theme", "light.css", Infinity, "/");
+              docCookies.setItem("theme", "light.css", Infinity, "/");
             }
             else{
-              document.body.className = "dark";
-              docCookies.setItem("theme", "dark", Infinity, "/");
+              //document.body.className = "dark";
+              //docCookies.setItem("theme", "dark.css", Infinity, "/");
+              docCookies.setItem("theme", "dark.css", Infinity, "/");
             }
         })
     })

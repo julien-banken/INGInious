@@ -31,6 +31,9 @@ $#
     <!-- Codemirror Style -->
     <link href="$get_homepath(True)/static/css/codemirror.css" rel="stylesheet">
 
+    <!-- Theme style -->
+    <link href="$get_homepath(True)/static/css/$:template_helper.call('theme')" rel="stylesheet">
+
     <!-- Icons -->
     <link rel="shortcut icon" href="$get_homepath(True)/static/icons/favicon.ico">
     <link rel="apple-touch-icon" sizes="57x57" href="$get_homepath(True)/static/icons/apple-touch-icon-57x57.png">
@@ -82,7 +85,7 @@ $#
     $:template_helper.call('header_hook')
 </head>
 
-<body class="$:template_helper.call('theme')">
+<body>
 
     <div class="navbar navbar-expand-sm bg-dark navbar-dark bg-dark">
         <div class="container-fluid">
