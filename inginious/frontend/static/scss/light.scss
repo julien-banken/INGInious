@@ -1,0 +1,46 @@
+// Colors :
+
+$main-color: #fff;
+$secondary-color: #333;
+$accent-color: #f7f7f7;
+$main-text-color: #000;
+$secondary-text-color: #181818;
+$border-color: #ccc;
+
+$theme-colors: (
+    "default": $border-color
+);
+
+// Code mirror :
+
+$code-current-line-background-color: #f0fcff;
+$code-default-color: #181818;
+$code-background-default-color: #ffffff;
+$code-background-color: #ffffff;
+$code-selection-color: #d9d9d9;
+$code-gutter-color: #f7f7f7;
+$code-gutter-border-color: transparent;
+$code-line-color: #222;
+$code-line-number-color: #999;
+$code-text-color: #000;
+$cm-keyword-color: #708;
+$cm-atom-color: #219;
+$cm-number-color: #164;
+$cm-def-color: #00f;
+$cm-variable-2-color: #05a;
+$cm-variable-3-color: #085;
+$cm-comment-color: #a50;
+$cm-string-color: #a11;
+$cm-string-2-color: #f50;
+$cm-meta-color: #555;
+$cm-qualifier-color: #555;
+$cm-builtin-color: #30a;
+$cm-bracket-color: #997;
+$cm-tag-color: #170;
+$cm-attribute-color: #00c;
+$cm-hr-color: #999;
+$cm-link-color: #00c;
+$cm-active-line-color: #e8f2ff;
+$cm-cursor-color: #000;
+
+@import "./main.scss";

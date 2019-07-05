@@ -1,0 +1,54 @@
+// Colors :
+
+$main-color: #252525;
+$secondary-color: #333;
+$accent-color: #333;
+$main-text-color: #FFF;
+$secondary-text-color: #bebebe;
+$border-color: #888888;
+
+$theme-colors: (
+    "default": $border-color,
+    "primary": #1484ff,
+    "secondary": gray,
+    "success": #1dab6b,
+    "danger": #db114a,
+    "warning": #e3944a,
+    "info": blue,
+    "light": white,
+    "dark": #333
+);
+
+// Code mirror :
+
+$code-current-line-background-color: rgb(66, 59, 59);
+$code-default-color: #ffffff;
+$code-background-default-color: #333333;
+$code-background-color: #333333;
+$code-selection-color: #636060;
+$code-gutter-color: #333333;
+$code-gutter-border-color: transparent;
+$code-line-color: #bebebe;
+$code-line-number-color: #000;
+$code-text-color: #ffffff;
+$cm-keyword-color: #c678dd;
+$cm-atom-color: #61afef;
+$cm-number-color: #d19a66;
+$cm-def-color: #61afef;
+$cm-variable-2-color: #52d9c5;
+$cm-variable-3-color: #0ad10a;
+$cm-comment-color: #5c6370;
+$cm-string-color: #98c379;
+$cm-string-2-color: #f50;
+$cm-meta-color: #b0abab;
+$cm-qualifier-color: #b0abab;
+$cm-builtin-color: #18b5b2;
+$cm-bracket-color: #ffffff;
+$cm-tag-color: #31f011;
+$cm-attribute-color: #ff8400;
+$cm-hr-color: #cfcaca;
+$cm-link-color: #00f;
+$cm-active-line-color: #403d3d;
+$cm-cursor-color: #FFF;
+
+@import "./main.scss";

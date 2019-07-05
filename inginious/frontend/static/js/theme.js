@@ -76,20 +76,16 @@ var docCookies = {
 
 (function () {
     window.addEventListener("load", function () {
-        var themeSwitcher = document.getElementById("theme-switcher");
-        themeSwitcher.addEventListener("click", function (e) {
-            var oldTheme = document.body.className;
-            docCookies.removeItem("theme");
-            if(oldTheme == "dark"){
-              //document.body.className = "light";
-              //docCookies.setItem("theme", "light.css", Infinity, "/");
-              docCookies.setItem("theme", "light.css", Infinity, "/");
+        var switcher = document.getElementById("theme-switcher");
+        switcher.addEventListener("click", function (e) {
+            let theme = docCookies.getItem("theme");
+            if (theme == null) {
+                docCookies.setItem("theme", "light.css", Infinity, "/");
+            } else {
+                var value = theme == "dark.css" ? "light.css" : "dark.css";
+                docCookies.setItem("theme", value, Infinity, "/");
             }
-            else{
-              //document.body.className = "dark";
-              //docCookies.setItem("theme", "dark.css", Infinity, "/");
-              docCookies.setItem("theme", "dark.css", Infinity, "/");
-            }
-        })
-    })
+            location.reload(true);
+        });
+    });
 })();

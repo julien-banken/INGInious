@@ -150,18 +150,20 @@ each(@themes, {
             }
         }
 
-        .card {
+        .card:not(.bg-primary):not(.bg-secondary):not(.bg-success):not(.bg-danger):not(.bg-warning):not(.bg-info):not(.bg-light):not(.bg-dark) {
+
             border-color: @border-color;
-        }
-        .card-header {
-            border-color: @border-color;
-        }
-        .card-body {
-            background-color: @main-color;
-        }
-        .card-header,
-        .card-footer {
-            background-color: @accent-color;
+
+            .card-header,
+            .card-footer {
+                background-color: @accent-color;
+            }
+            .card-header {
+                border-color: @border-color;
+            }
+            .card-body {
+                background-color: @main-color;
+            }
         }
 
         .form-control {
@@ -169,10 +171,12 @@ each(@themes, {
             border-color: @border-color;
             color: @text-color;
         }
+
         .form-control:focus {
             background-color: @main-color;
             color: @text-color;
         }
+
         .form-control:disabled {
             background-color: @accent-color;
         }
