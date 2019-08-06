@@ -80,7 +80,7 @@ var docCookies = {
         switcher.addEventListener("click", function (e) {
             let theme = docCookies.getItem("theme");
             if (theme == null) {
-                docCookies.setItem("theme", "light.css", Infinity, "/");
+                docCookies.setItem("theme", "dark.css", Infinity, "/");
             } else {
                 var value = theme == "dark.css" ? "light.css" : "dark.css";
                 docCookies.setItem("theme", value, Infinity, "/");

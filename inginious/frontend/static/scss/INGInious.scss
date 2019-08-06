@@ -1,0 +1,317 @@
+//
+// This file is part of INGInious. See the LICENSE and the COPYRIGHTS files for
+// more information about the licensing of this file.
+//
+
+/* Fonts */
+
+@import url("//fonts.googleapis.com/css?family=Yanone+Kaffeesatz:300");
+@import url("//fonts.googleapis.com/css?family=Source+Code+Pro");
+
+/* Mixins */
+
+@mixin blur($size) {
+    -webkit-filter: blur($size);
+    -moz-filter: blur($size);
+    -o-filter: blur($size);
+    -ms-filter: blur($size);
+    filter: blur($size);
+}
+
+@mixin transition($transition) {
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -ms-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
+}
+
+@mixin grayscale($value: 1) {
+    -webkit-filter: grayscale($value);
+    -moz-filter: grayscale($value);
+    -o-filter: grayscale($value);
+    -ms-filter: grayscale($value);
+    filter: grayscale($value);
+}
+
+@mixin custom_filter($filter) {
+    -webkit-filter: $filter;
+    -moz-filter: $filter;
+    -o-filter: $filter;
+    -ms-filter: $filter;
+    filter: $filter;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 45px; /* Margin bottom by footer height */
+}
+
+/* Navbar */
+
+.navbar {
+    padding: 0;
+}
+
+.navbar-brand {
+
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 45px;
+    padding:0;
+
+    img {
+        height: 45px;
+        vertical-align: bottom;
+        display: inline;
+    }
+}
+
+.navbar-text {
+    margin:0;
+    padding: 0;
+    line-height: 45px;
+}
+
+.breadcrumb {
+
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    text-transform: none;
+
+    .breadcrumb-item {
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 250px;
+        color: rgba(255, 255, 255, 0.7);
+
+        &:before {
+            font: normal normal normal 24px/1 FontAwesome;
+            content: "\f105";
+            margin-top: -4px;
+            color: #888;
+            position: absolute;
+        }
+
+        span {
+            padding-left: 1rem;
+        }
+
+        a {
+            color: rgba(255,255,255,0.7);
+            padding-left: 1rem;
+
+            &:hover {
+                text-decoration: none;
+                color: white;
+            }
+        }
+    }
+
+    .active {
+        max-width: 100%;
+    }
+}
+
+
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px; /* Set the fixed height of the footer here */
+    line-height: 45px; /* Vertically center the text there */
+}
+
+/* Progress bars */
+
+.progress-bar[aria-valuenow] {
+    line-height: 16px !important;
+    min-width: 30px;
+    color: #ffffff;
+}
+
+.progress-bar[aria-valuenow="0"] {
+    background-color: transparent !important;
+    color: #555555;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+/* SSH code */
+
+pre {
+    border: 1px solid #cccccc;
+    padding: 10px;
+}
+
+input.monospace {
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+/* Task submission form*/
+
+form#task {
+
+    @include transition(all 0.3s ease-in-out);
+
+    .form-blur {
+        @include blur(5px);
+    }
+
+    label {
+        display: block;
+    }
+}
+
+/* Task alert message (feedbacks...) */
+#task_alert {
+
+    position: relative;
+
+    #ssh_remote_info {
+        pre {
+            &:before {
+                content: "$ ";
+            }
+            -moz-user-select: all;
+            -webkit-user-select: all;
+            user-select: all;
+            background-color: #f5f5f5;
+        }
+        code {
+            -moz-user-select: all;
+            -webkit-user-select: all;
+            user-select: all;
+            background-color: #f5f5f5;
+            padding: 2px 4px;
+        }
+    }
+
+    .kill-submission-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 50px;
+    }
+
+    .loading-alert {
+        padding-right: 50px;
+    }
+
+    #iframessh {
+        width: 100%;
+        height: 600px;
+    }
+}
+
+/* Submission history */
+
+#submissions_restrictsize {
+    overflow: auto;
+    max-height: 223px;
+    margin-bottom: 50px;
+}
+
+/* Task debug modal */
+
+#task_debug {
+    dd {
+        border-left: 1px solid #cccccc;
+        padding-left: 20px;
+        min-height: 20px;
+
+        white-space: pre;
+        text-overflow: ellipsis;
+        overflow: auto;
+
+        dl {
+            margin-bottom: 0;
+        }
+    }
+}
+
+/* Studio files tab close button */
+.nav-tabs {
+    &> li.studio_file_editor_tab {
+        a {
+            .closetab {
+                cursor: pointer;
+                border: none;
+                background-color: transparent;
+                margin: 0;
+                padding: 0;
+            }
+        }
+    }
+}
+
+/* Checked list group download/replay page */
+
+ul.checked-list-box {
+
+    max-height: 315px;
+    overflow-y: scroll;
+    margin: 0;
+
+    .state-icon {
+        left: -5px;
+    }
+
+    input[type="checkbox"] {
+        display: none;
+    }
+}
+
+/* Sorted tables dragging style */
+
+.dragging {
+    cursor: move !important;
+}
+
+.dragged {
+    position: absolute;
+    top:0;
+    opacity: 0.5;
+    z-index: 2000;
+}
+
+/* Sorted tables placeholders */
+
+.placeholder {
+    display: block;
+    background: black;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.placeholder:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-left-color: black;
+    margin-top: -5px;
+    left: -5px;
+    border-right: none;
+}
+
+.submission:hover {
+    cursor: pointer;
+}
+
+@import "./code.scss";

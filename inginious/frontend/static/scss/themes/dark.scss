@@ -1,3 +1,8 @@
+//
+// This file is part of INGInious. See the LICENSE and the COPYRIGHTS files for
+// more information about the licensing of this file.
+//
+
 // Colors :
 
 $main-color: #252525;
@@ -9,13 +14,13 @@ $border-color: #888888;
 
 $theme-colors: (
     "default": $border-color,
-    "primary": #1484ff,
-    "secondary": gray,
-    "success": #1dab6b,
-    "danger": #db114a,
+    "primary": #17477e,
+    "secondary": #323232,
+    "success": #127448,
+    "danger": #900e0e,
     "warning": #e3944a,
-    "info": blue,
-    "light": white,
+    "info": #036ba7,
+    "light": #252525,
     "dark": #333
 );
 
@@ -51,4 +56,4 @@ $cm-link-color: #00f;
 $cm-active-line-color: #403d3d;
 $cm-cursor-color: #FFF;
 
-@import "./main.scss";
+@import "../main.scss";
